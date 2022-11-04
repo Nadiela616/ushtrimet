@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo">Jepet nje array me gjatesi N dhe i perbere nga 
+numra te plote. Gjeni numrin qe perseritet me 
+shume ne kete array me kompleksitetin O(n) . 
+Array i dhene eshte :
+[2,4,4,5,2,3,3,4,5,6,6,6,1]</p>
+
+<script>
+
+		function repeatingElement(arr, N)
+		{
+		
+			let M = 0, sum = 0;
+			for (let i = 0; i < N; i++) {
+
+				sum += arr[i];
+
+				M = Math.max(M, arr[i]);
+			}
+
+			let sum1 = parseInt(M * (M + 1) / 2);
+
+			let ans = parseInt((sum - sum1) / (N - M));
+			return ans;
+		}
+	
+		let arr = [2,4,4,5,2,3,3,4,5,6,6,6,1];
+		let N = arr.length;
+
+	
+		document.write(repeatingElement(arr, N));
+
+
+	</script>
+
+
+</body>
+</html>
